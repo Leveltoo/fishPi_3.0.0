@@ -1,0 +1,38 @@
+.container {
+  height: auto;
+
+  &_logo {
+    text-align: center;
+    font: {
+      size: 2.5em;
+      weight: lighter;
+    };
+    //color: var(--global-text-color);
+    img {
+      width: 2em;
+      vertical-align: middle;
+    }
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  &_form {
+    padding: 20px .5em;
+    width: 95%;
+    margin: auto;
+
+    i {
+      width: 15px;
+    }
+  }
+
+  &_footer {
+    display: flex;
+
+    .btn {
+      margin-left: 5px;
+    }
+  }
+}

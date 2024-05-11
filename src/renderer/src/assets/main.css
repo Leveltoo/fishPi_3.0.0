@@ -1,0 +1,333 @@
+@import "base.css";
+
+@font-face {
+  font-family: HarmonyOS;
+  src: url(https://resource.hellofont.cn/font/HarmonyOS_SansSC_Regular-J.woff2) format("woff2"), url(https://resource.hellofont.cn/font/HarmonyOS_SansSC_Regular-J.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: HarmonyOS;
+  src: url(https://resource.hellofont.cn/font/HarmonyOS_SansSC_Medium-J.woff2) format("woff2"), url(https://resource.hellofont.cn/font/HarmonyOS_SansSC_Medium-J.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: HarmonyOS;
+  src: url(https://resource.hellofont.cn/font/HarmonyOS_SansSC_Bold-J.woff2) format("woff2"), url(https://resource.hellofont.cn/font/HarmonyOS_SansSC_Bold-J.woff) format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: HarmonyOS;
+  src: url(https://resource.hellofont.cn/font/HarmonyOS_SansSC_Black-J.woff2) format("woff2"), url(https://resource.hellofont.cn/font/HarmonyOS_SansSC_Black-J.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: transparent;
+  color: var(--global-text-color);
+  font: 1em/1.8 HarmonyOS, "Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", "EmojiSymbols" !important;
+  -webkit-app-region: drag;
+  overflow: hidden;
+}
+
+input, select, textarea, button {
+  font: inherit;
+}
+
+.no-border input.ivu-input {
+  border-color: transparent;
+  box-shadow: none;
+  background: transparent;
+  font-size: .8em;
+  height: auto;
+}
+
+.ivu-layout.ivu-layout-has-sider {
+  height: inherit;
+}
+
+.ivu-layout-sider, .ivu-layout {
+  overflow: auto;
+}
+
+.ivu-layout {
+  background-color: transparent;
+}
+
+.collapsed-menu.ivu-menu-vertical .ivu-menu-submenu-title-icon {
+  float: none;
+  top: 15px;
+  left: 4px;
+  transition: all .2s;
+}
+
+.collapsed-menu.ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item {
+  padding-left: 12px !important;
+  text-align: center;
+}
+
+.ivu-menu-opened.ivu-menu-submenu .ivu-menu-submenu-title-icon {
+  left: 8px;
+}
+
+.ivu-select-dropdown {
+  z-index: 901
+}
+
+.ivu-input::-webkit-input-placeholder {
+  color: var(--global-control-placeholder-color);
+}
+
+a {
+  color: inherit
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--global-scroll-bar-color);
+}
+
+.plyr--audio .plyr__controls {
+  padding: 0;
+}
+
+.plyr, .plyr__volume {
+  min-width: 0;
+}
+
+.plyr__volume {
+  width: auto;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+.ivu-poptip-confirm .ivu-poptip-body .ivu-icon {
+  left: 20px;
+}
+
+:focus {
+  outline: none;
+}
+
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ivu-btn-text:focus {
+  box-shadow: none;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag
+}
+
+.drag {
+  -webkit-app-region: drag
+}
+
+.ivu-modal-content {
+  background-color: var(--global-popup-background-color);
+}
+
+.ivu-modal-header-inner {
+  color: var(--global-control-text-color);
+}
+
+.msg-control > .ivu-icon + span {
+  display: none;
+}
+
+.ivu-select-selection, .ivu-select-dropdown {
+  background-color: var(--global-control-background-color);
+  color: var(--global-control-text-color);
+  border-color: var(--global-control-border-color);
+}
+
+.ivu-modal-header {
+  border-bottom-color: var(--global-control-border-color);
+}
+
+.ivu-modal-footer {
+  border-top-color: var(--global-control-border-color);
+}
+
+.ivu-select-item {
+  color: var(--global-control-text-color);
+}
+
+.ivu-input-number-handler-wrap {
+  background-color: var(--global-control-background-color);
+  border-color: var(--global-control-border-color);
+}
+
+.ivu-input, .ivu-input-number, input {
+  border-color: var(--global-control-border-color);
+  color: var(--global-control-text-color);
+  background-color: var(--global-control-background-color);
+  background-image: none;
+  border-radius: 0;
+}
+
+.ivu-input-group-append .ivu-btn, .ivu-input-group-prepend .ivu-btn {
+  border-color: transparent;
+  background-color: transparent;
+  color: inherit;
+}
+
+.ivu-input-group-append .ivu-btn, .ivu-input-group-prepend .ivu-btn {
+  border-color: transparent;
+  background-color: transparent;
+  color: inherit;
+}
+
+.ivu-input-group-append, .ivu-input-group-prepend {
+  color: var(--global-control-text-color);
+  background-color: var(--global-append-btn-background-color);
+  border-color: var(--global-control-border-color);
+}
+
+.ivu-input-group-append {
+  border-left-color: initial;
+}
+
+.ivu-btn-text {
+  color: var(--global-control-text-color);
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0 0.5em;
+}
+
+.ivu-poptip-inner {
+  background: var(--global-popup-background-color);
+}
+
+.ivu-poptip-popper[x-placement^="top"] .ivu-poptip-arrow:after {
+  border-top-color: var(--global-popup-background-color);
+}
+
+.ivu-poptip-popper[x-placement^="bottom"] .ivu-poptip-arrow:after {
+  border-bottom-color: var(--global-popup-background-color);
+}
+
+.ivu-poptip-popper[x-placement^="left"] .ivu-poptip-arrow:after {
+  border-left-color: var(--global-popup-background-color);
+}
+
+.ivu-poptip-popper[x-placement^="right"] .ivu-poptip-arrow:after {
+  border-right-color: var(--global-popup-background-color);
+}
+
+.ivu-poptip-confirm .ivu-poptip-footer .ivu-btn-primary {
+  background: var(--global-active-color);
+  color: var(--global-text-color);
+}
+
+.ivu-btn-text:hover {
+  background: transparent;
+}
+
+.ivu-poptip-title-inner {
+  color: var(--global-control-text-color);
+}
+
+.ivu-form .ivu-form-item-label {
+  color: var(--global-text-color)
+}
+
+.ivu-tabs-ink-bar {
+  background-color: var(--global-active-color);
+}
+
+.ivu-avatar {
+  min-width: 32px;
+}
+
+.ivu-avatar-small {
+  min-width: 24px;
+}
+
+.ivu-avatar > img {
+  object-fit: cover;
+}
+
+.ivu-switch {
+  background-color: var(--global-control-background-color);
+}
+
+.ivu-switch-checked, .ivu-checkbox-checked .ivu-checkbox-inner {
+  background-color: var(--global-active-color);
+}
+
+.heat-in, .heat-out {
+  position: absolute;
+  height: 3px;
+  background-color: var(--article-heat-color);
+  z-index: 1;
+  bottom: -3px;
+  right: 0;
+  width: 3px;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: slideIn;
+}
+
+.heat-out {
+  animation-name: slideOut;
+}
+
+@keyframes slideOut {
+  0% {
+    right: 0;
+    opacity: 1;
+  }
+
+  50% {
+    right: 50%;
+    opacity: 0;
+  }
+
+  100% {
+    right: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    right: 100%;
+    opacity: 0;
+  }
+
+
+  50% {
+    right: 50%;
+    opacity: 1;
+  }
+
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
