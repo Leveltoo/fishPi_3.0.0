@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import { Button, Form, FormItem, Input, Message } from 'view-ui-plus'
+import { Button, Form, FormItem, Icon, Input, Message } from 'view-ui-plus'
 import { reactive, ref } from 'vue'
 import FishPi from 'fishpi'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 import useStore from '../store'
-
 const { user } = useStore()
 
 interface LoginInfoType {
@@ -17,10 +18,14 @@ const loginForm = reactive<LoginInfoType>({
   passwd: '',
   mfaCode: ''
 })
+const showPassword = ref<boolean>(false)
 const formRef = ref(null)
 // onMounted(() => {
 //   console.log(store)
 // })
+const handleShowPassword = () => {
+  showPassword.value = !showPassword.value
+}
 const validateUser = (rule, value, callback) => {
   if (value === '') {
     callback(new Error('请输入您的用户名'))
@@ -55,6 +60,7 @@ const handleSubmit = () => {
         if (code === 0) {
           user.updateState(data)
           localStorage.setItem('userInfo', JSON.stringify(data))
+          router.push('/')
         } else {
           Message.error(msg)
         }
@@ -82,22 +88,37 @@ const handleRegister = () => {
           placeholder="用户名"
           type="text"
           @keyup.enter="handleEnter(1)"
-        ></Input>
+        >
+          <template #prepend>
+            <Icon custom="fa fa-user"></Icon>
+          </template>
+        </Input>
       </FormItem>
       <FormItem prop="passwd">
         <Input
           v-model="loginForm.passwd"
+          :type="showPassword ? 'text' : 'password'"
           placeholder="密码"
-          type="password"
           @keyup.enter="handleEnter(2)"
-        ></Input>
+        >
+          <template #prepend>
+            <Icon custom="fa fa-lock"></Icon>
+          </template>
+          <template #append>
+            <Icon :type="showPassword ? 'md-eye-off' : 'md-eye'" @click="handleShowPassword" />
+          </template>
+        </Input>
       </FormItem>
       <FormItem>
         <Input
           v-model="loginForm.mfaCode"
           placeholder="两步验证码"
           @keyup.enter="handleSubmit"
-        ></Input>
+        >
+          <template #prepend>
+            <Icon custom="fa fa-shield"></Icon>
+          </template>
+        </Input>
       </FormItem>
     </Form>
     <div class="container_footer">

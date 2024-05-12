@@ -1,10 +1,9 @@
 <script lang="ts" setup>
 import { Avatar, Badge, Icon } from 'view-ui-plus'
 import { onMounted } from 'vue'
-import { useRouter } from 'vue-router'
 import useStore from '../store'
-
 const { user } = useStore()
+import { useRouter } from 'vue-router'
 const router = useRouter()
 onMounted(() => {
   if (!localStorage.getItem('userInfo')) {
