@@ -2,8 +2,10 @@
 import { Avatar, Badge, Icon } from 'view-ui-plus'
 import { onMounted } from 'vue'
 import useStore from '../store'
-const { user } = useStore()
 import { useRouter } from 'vue-router'
+
+const { user } = useStore()
+
 const router = useRouter()
 onMounted(() => {
   if (!localStorage.getItem('userInfo')) {
@@ -32,9 +34,9 @@ const handleGoto = (url: string) => {
         </li>
         <!--私聊-->
         <li class="featureList_item" @click="handleGoto('/chat')">
-          <Badge :count="2" :dot="true" :offset="[5, -2]"
-            ><Icon custom="fa-solid fa-comment-dots"
-          /></Badge>
+          <Badge :count="2" :dot="true" :offset="[5, -2]">
+            <Icon custom="fa-solid fa-comment-dots" />
+          </Badge>
         </li>
         <!--清风明月-->
         <li class="featureList_item" @click="handleGoto('/breezemoons')">
@@ -66,9 +68,9 @@ const handleGoto = (url: string) => {
         </li>
       </ul>
     </section>
-    <section class="content">
+    <div class="content">
       <router-view />
-    </section>
+    </div>
   </div>
 </template>
 
