@@ -1,17 +1,17 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Electron</title>
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';connect-src https://fishpi.cn; img-src 'self' data:"
-      http-equiv="Content-Security-Policy"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>Electron</title>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta
+    content="default-src https://fishpi.cn; font-src 'self' https://resource.hellofont.cn;script-src 'self'; style-src 'self' 'unsafe-inline';connect-src https://fishpi.cn 'self'; img-src https://file.fishpi.cn data:"
+    http-equiv="Content-Security-Policy"
+  />
+</head>
 
-  <body>
-    <div id="app"></div>
-    <script src="/src/main.ts" type="module"></script>
-  </body>
+<body>
+<div id="app"></div>
+<script src="/src/main.ts" type="module"></script>
+</body>
 </html>
