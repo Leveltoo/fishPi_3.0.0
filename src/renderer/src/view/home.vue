@@ -26,7 +26,7 @@ const handleGoto = (url: string) => {
       <ul class="featureList">
         <!--头像-->
         <li class="featureList_item">
-          <Avatar></Avatar>
+          <Avatar :src="user.userAvatarURL || null"></Avatar>
         </li>
         <!--聊天室-->
         <li class="featureList_item" @click="handleGoto('/chatroom')">

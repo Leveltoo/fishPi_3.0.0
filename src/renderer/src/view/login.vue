@@ -3,8 +3,10 @@ import { Button, Form, FormItem, Icon, Input, Message } from 'view-ui-plus'
 import { reactive, ref } from 'vue'
 import FishPi from 'fishpi'
 import { useRouter } from 'vue-router'
-const router = useRouter()
 import useStore from '../store'
+
+const router = useRouter()
+
 const { user } = useStore()
 
 interface LoginInfoType {
@@ -60,7 +62,7 @@ const handleSubmit = () => {
         if (code === 0) {
           user.updateState(data)
           localStorage.setItem('userInfo', JSON.stringify(data))
-          router.push('/')
+          await router.push('/')
         } else {
           Message.error(msg)
         }
@@ -110,11 +112,7 @@ const handleRegister = () => {
         </Input>
       </FormItem>
       <FormItem>
-        <Input
-          v-model="loginForm.mfaCode"
-          placeholder="两步验证码"
-          @keyup.enter="handleSubmit"
-        >
+        <Input v-model="loginForm.mfaCode" placeholder="两步验证码" @keyup.enter="handleSubmit">
           <template #prepend>
             <Icon custom="fa fa-shield"></Icon>
           </template>
