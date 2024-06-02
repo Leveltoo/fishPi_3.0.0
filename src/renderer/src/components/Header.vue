@@ -1,7 +1,16 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { computed } from 'vue'
+import useStore from '../store'
+import { Header } from 'view-ui-plus'
+
+const { setting } = useStore()
+const title = computed(() => `${setting.title}`)
+</script>
 
 <template>
-  <div>这是header</div>
+  <Header class="header">{{ title ? `摸鱼派-${title}` : '摸鱼派' }}</Header>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+@import '../style/header';
+</style>

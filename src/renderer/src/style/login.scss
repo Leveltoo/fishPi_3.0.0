@@ -1,5 +1,6 @@
 .container {
   height: auto;
+  -webkit-app-region: no-drag;
 
   &_logo {
     text-align: center;
@@ -39,7 +40,8 @@
   :deep(.ivu-form-item-error .ivu-input-group-prepend) {
     background-color: var(--global-control-background-color);
   }
-  :deep(.ivu-form-item-error .ivu-input-group-append){
+
+  :deep(.ivu-form-item-error .ivu-input-group-append) {
     background-color: var(--global-control-background-color);
   }
 }

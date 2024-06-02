@@ -1,6 +1,7 @@
 .layout {
   display: flex;
   width: 100%;
+  -webkit-app-region: no-drag;
 
   .sideBar {
     height: 100%;

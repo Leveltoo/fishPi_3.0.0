@@ -4,17 +4,45 @@ import { onMounted } from 'vue'
 import useStore from '../store'
 import { useRouter } from 'vue-router'
 
-const { user } = useStore()
-
+const { user, setting } = useStore()
+const routerArray = [
+  {
+    url: '/chatroom',
+    title: '聊天室'
+  },
+  {
+    url: '/chat',
+    title: '私聊'
+  },
+  {
+    url: '/articles',
+    title: '帖子'
+  },
+  {
+    url: '/breezemoons',
+    title: '清风明月'
+  },
+  {
+    url: '/extension',
+    title: '扩展'
+  },
+  {
+    url: '/setting',
+    title: '设置'
+  }
+]
 const router = useRouter()
 onMounted(() => {
-  if (!localStorage.getItem('userInfo')) {
+  if (!localStorage.getItem('user')) {
     router.push('/login')
   } else {
-    user.updateState(JSON.parse(localStorage.getItem('userInfo') as string))
+    // user.updateState(JSON.parse(localStorage.getItem('userInfo') as string))
   }
 })
 const handleGoto = (url: string) => {
+  setting.updateState({
+    title: routerArray.find((item) => item.url === url).title
+  })
   router.push(url)
 }
 </script>
@@ -26,7 +54,7 @@ const handleGoto = (url: string) => {
       <ul class="featureList">
         <!--头像-->
         <li class="featureList_item">
-          <Avatar :src="user.userAvatarURL || null"></Avatar>
+          <Avatar :src="user.userAvatarURL || undefined"></Avatar>
         </li>
         <!--聊天室-->
         <li class="featureList_item" @click="handleGoto('/chatroom')">

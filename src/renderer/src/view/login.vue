@@ -61,7 +61,7 @@ const handleSubmit = () => {
         const { code, data, msg } = res
         if (code === 0) {
           user.updateState(data)
-          localStorage.setItem('userInfo', JSON.stringify(data))
+          // localStorage.setItem('userInfo', JSON.stringify(data))
           await router.push('/')
         } else {
           Message.error(msg)
