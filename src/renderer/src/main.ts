@@ -8,10 +8,11 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import './assets/main.css'
 import '../theme/font-awesome.css'
 import '../theme/font-awesome/all.min.css'
+import VueDOMPurifyHTML from 'vue-dompurify-html'
 
 const pinia = createPinia()
 pinia.use(piniaPluginPersistedstate)
 const app = createApp(App)
 app.use(pinia)
-
+app.use(VueDOMPurifyHTML)
 app.use(router).mount('#app')
