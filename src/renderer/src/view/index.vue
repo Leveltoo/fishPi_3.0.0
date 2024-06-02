@@ -1,7 +1,9 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import Header from '../components/Header.vue'
+</script>
 
 <template>
-  <div class="header">123123</div>
+  <Header class="header" />
   <div class="main">
     <router-view />
   </div>
@@ -12,6 +14,7 @@
   height: 40px;
   width: 100vw;
 }
+
 .main {
   background-color: var(--global-background-color);
   display: flex;
