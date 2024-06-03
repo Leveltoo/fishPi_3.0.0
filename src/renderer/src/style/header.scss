@@ -3,4 +3,45 @@
   justify-content: space-between;
   align-items: center;
   -webkit-app-region: drag;
+  padding: 0;
+
+  h1 {
+    font-size: 1em;
+    padding: 0 5px;
+    font-weight: normal;
+    user-select: none;
+    -webkit-app-region: drag;
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 1.5em;
+    }
+
+    span {
+      max-width: calc(100vw - 170px);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .control {
+    height: inherit;
+    display: flex;
+    align-items: center;
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .cirle-empty {
+        width: 1em;
+        height: 1em;
+        border-radius: .5em;
+        border: 2px dashed var(--global-control-text-color);
+      }
+    }
+
+  }
 }
