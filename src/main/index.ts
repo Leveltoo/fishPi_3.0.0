@@ -28,6 +28,13 @@ function createWindow(): void {
   ipcMain.on('close-window', () => {
     mainWindow.close()
   })
+  ipcMain.on('top-window', (event, args) => {
+    mainWindow.setAlwaysOnTop(args)
+  })
+  ipcMain.on('window-opacity', (event, args) => {
+    mainWindow.setOpacity(args)
+  })
+
   mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url)
     return { action: 'deny' }

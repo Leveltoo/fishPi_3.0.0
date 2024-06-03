@@ -2,11 +2,13 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 
 interface UserState {
   title: string | null
+  opacity: number
 }
 
 const useSettingStore = defineStore('setting', {
   state: (): UserState => ({
-    title: ''
+    title: '',
+    opacity: 0.7
   }),
   getters: {},
   actions: {

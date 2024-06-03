@@ -36,7 +36,13 @@
       justify-content: center;
       -webkit-app-region: no-drag;
 
-      .cirle-empty {
+      .select {
+        color: var(--header-btn-checked-color) !important;
+        transform: rotate(45deg);
+        border-color: var(--header-btn-checked-color) !important
+      }
+
+      .circle-empty {
         width: 1em;
         height: 1em;
         border-radius: .5em;
