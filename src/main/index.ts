@@ -22,7 +22,12 @@ function createWindow(): void {
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })
-
+  ipcMain.on('minimize-window', () => {
+    mainWindow.minimize()
+  })
+  ipcMain.on('close-window', () => {
+    mainWindow.close()
+  })
   mainWindow.webContents.setWindowOpenHandler((details) => {
     shell.openExternal(details.url)
     return { action: 'deny' }

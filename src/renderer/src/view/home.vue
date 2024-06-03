@@ -34,8 +34,14 @@ const routerArray = [
 const router = useRouter()
 onMounted(() => {
   if (!localStorage.getItem('user')) {
+    setting.updateState({
+      title: ''
+    })
     router.push('/login')
   } else {
+    setting.updateState({
+      title: '聊天室'
+    })
     // user.updateState(JSON.parse(localStorage.getItem('userInfo') as string))
   }
 })

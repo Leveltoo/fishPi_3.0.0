@@ -3,9 +3,15 @@ import { computed } from 'vue'
 import useStore from '../store'
 import { Button, Header, Icon } from 'view-ui-plus'
 import Music from './Music.vue'
+import { sendMessage } from '../utils'
 
 const { setting } = useStore()
 const title = computed(() => `${setting.title}`)
+const handleClickControlBar = (order: string) => {
+  console.log('点击事件触发')
+  sendMessage(order)
+  // 'minimize-window'
+}
 </script>
 
 <template>
@@ -16,7 +22,7 @@ const title = computed(() => `${setting.title}`)
     </h1>
     <Music></Music>
     <div class="control">
-      <Button class="button" type="text">
+      <Button class="button" type="text" @click="handleClickControlBar('minimize-window')">
         <Icon custom="fa fa-minus" />
       </Button>
       <Button class="button" type="text">
@@ -25,7 +31,7 @@ const title = computed(() => `${setting.title}`)
       <Button class="button" type="text">
         <Icon custom="fa fa-thumb-tack" />
       </Button>
-      <Button class="button" type="text">
+      <Button class="button" type="text" @click="handleClickControlBar('close-window')">
         <Icon custom="fa fa-times" />
       </Button>
     </div>
