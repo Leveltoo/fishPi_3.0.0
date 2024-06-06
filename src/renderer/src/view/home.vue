@@ -5,7 +5,7 @@ import useStore from '../store'
 import { useRouter } from 'vue-router'
 
 const { user, setting } = useStore()
-const routerArray = new Map([
+const routerMap = new Map([
   ['/chatroom', '聊天室'],
   ['/chat', '私聊'],
   ['/articles', '帖子'],
@@ -29,7 +29,7 @@ onMounted(() => {
 })
 const handleGoto = (url: string) => {
   setting.updateState({
-    title: routerArray.get(url)
+    title: routerMap.get(url)
   })
   router.push(url)
 }
