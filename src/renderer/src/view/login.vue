@@ -9,13 +9,7 @@ const router = useRouter()
 
 const { user } = useStore()
 
-interface LoginInfoType {
-  username: string
-  passwd: string
-  mfaCode: string
-}
-
-const loginForm = reactive<LoginInfoType>({
+const loginForm = reactive({
   username: '',
   passwd: '',
   mfaCode: ''
@@ -86,7 +80,7 @@ const handleRegister = () => {
     <Form ref="formRef" :model="loginForm" :rules="ruleValidate" class="container_form">
       <FormItem prop="username">
         <Input
-          v-model="loginForm.username"
+          v-model.trim="loginForm.username"
           placeholder="用户名"
           type="text"
           @keyup.enter="handleEnter(1)"
@@ -98,7 +92,7 @@ const handleRegister = () => {
       </FormItem>
       <FormItem prop="passwd">
         <Input
-          v-model="loginForm.passwd"
+          v-model.trim="loginForm.passwd"
           :type="showPassword ? 'text' : 'password'"
           placeholder="密码"
           @keyup.enter="handleEnter(2)"
@@ -112,7 +106,11 @@ const handleRegister = () => {
         </Input>
       </FormItem>
       <FormItem>
-        <Input v-model="loginForm.mfaCode" placeholder="两步验证码" @keyup.enter="handleSubmit">
+        <Input
+          v-model.trim="loginForm.mfaCode"
+          placeholder="两步验证码"
+          @keyup.enter="handleSubmit"
+        >
           <template #prepend>
             <Icon custom="fa fa-shield"></Icon>
           </template>

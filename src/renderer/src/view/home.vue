@@ -5,32 +5,14 @@ import useStore from '../store'
 import { useRouter } from 'vue-router'
 
 const { user, setting } = useStore()
-const routerArray = [
-  {
-    url: '/chatroom',
-    title: '聊天室'
-  },
-  {
-    url: '/chat',
-    title: '私聊'
-  },
-  {
-    url: '/articles',
-    title: '帖子'
-  },
-  {
-    url: '/breezemoons',
-    title: '清风明月'
-  },
-  {
-    url: '/extension',
-    title: '扩展'
-  },
-  {
-    url: '/setting',
-    title: '设置'
-  }
-]
+const routerArray = new Map([
+  ['/chatroom', '聊天室'],
+  ['/chat', '私聊'],
+  ['/articles', '帖子'],
+  ['/breezemoons', '清风明月'],
+  ['/extension', '扩展'],
+  ['/setting', '设置']
+])
 const router = useRouter()
 onMounted(() => {
   if (!localStorage.getItem('user')) {
@@ -42,12 +24,12 @@ onMounted(() => {
     setting.updateState({
       title: '聊天室'
     })
-    // user.updateState(JSON.parse(localStorage.getItem('userInfo') as string))
+    router.push('/chatroom')
   }
 })
 const handleGoto = (url: string) => {
   setting.updateState({
-    title: routerArray.find((item) => item.url === url).title
+    title: routerArray.get(url)
   })
   router.push(url)
 }

@@ -1,12 +1,12 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-interface UserState {
+export interface SettingState {
   title: string | null
   opacity: number
 }
 
 const useSettingStore = defineStore('setting', {
-  state: (): UserState => ({
+  state: (): SettingState => ({
     title: '',
     opacity: 0.7
   }),

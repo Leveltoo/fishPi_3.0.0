@@ -1,6 +1,6 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-interface UserState {
+export interface UserState {
   cardBg: string | null
   followerCount: number | null
   followingUserCount: number | null
@@ -21,15 +21,6 @@ interface UserState {
 }
 
 const useUserStore = defineStore('user', {
-  // state: () => ({
-  //   cardBg: '',
-  //   followerCount: 0,
-  //   followingUserCount: 0,
-  //   oId: '',
-  //   onlineMinute: 0,
-  //   sysMetal: [],
-  //   userAppRole: ''
-  // }),
   state: (): UserState => ({
     cardBg: null,
     followerCount: null,

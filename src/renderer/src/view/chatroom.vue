@@ -1,5 +1,9 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import ChatroomItem from '../components/ChatroomItem.vue'
+</script>
 
-<template></template>
+<template>
+  <ChatroomItem />
+</template>
 
 <style scoped></style>
